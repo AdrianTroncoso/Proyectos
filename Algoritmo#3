@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class Lista
+{
+class Nodo
+{
+public int dato;
+public Nodo prev;
+public Nodo next;
+}
+private Nodo raiz;
+public Lista ()
+{
+raiz = null;
+}
+public void Insertar(int numero)
+{
+Nodo nuevo = new Nodo();
+nuevo.dato = numero;
+if (raiz != null)
+{
+raiz.prev = nuevo;
+raiz = nuevo;
+}
+}
+public void Imprimir()
+{
+Nodo indice = raiz;
+while (indice != null)
+{
+System.out.print(indice.dato+" ,");
+indice = indice.next;
+}
+}
+public static void main(String[] args)
+{
+Lista lst = new Lista();
+lst.Insertar(12);
+lst.Insertar(99);
+lst.Insertar(37);
+lst.Imprimir();
+}
+}
