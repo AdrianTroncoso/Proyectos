@@ -1,0 +1,40 @@
+import java.util.Scanner;
+public class Palindromo
+{
+Scanner Input = new Scanner(System.in);
+String Word;
+public void cargarPalabra()
+{
+System.out.print("Ingrese una palabra para saber si es un palindromo:");
+Word = Input.next();
+}
+public boolean evaluarPalabra()
+{
+for (int f = 0 ; f < Word.length() ; f++)
+{
+if (Word.charAt(f) != Word.charAt(Word.length() -f - 1))
+{
+return false;
+}
+}
+return true;
+}
+public void esUnPalindromo()
+{
+if ( evaluarPalabra()==true )
+{
+System.out.print("La palabra " +Word+ " Es un palindromo");
+}
+else
+{
+System.out.print("La palabra " +Word+ " no es un palindromo");
+}
+}
+public static void main(String[] args)
+{
+Palindromo pal = new Palindromo();
+pal.cargarPalabra();
+pal.evaluarPalabra();
+pal.esUnPalindromo();
+}
+}
