@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int Numero;
+int f = 1;
+int factorial = 1;
+int Factorial ()
+{
+while (f <= Numero)
+{
+factorial = factorial * f;
+f++;
+Factorial();
+}
+}
+int main()
+{
+cout << "Ingrese un numero para calcularle el factorial:" << endl;
+cin>>Numero;
+Factorial();
+cout<<"El factorial es: "<<factorial<<endl;
+return 0;
+}
