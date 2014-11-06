@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class Receta
+{
+private Scanner Input;
+private int [] IDingredientes;
+private String [] Ingredientes;
+private int ID1;
+private int ID2;
+private int posicion1;
+private int posicion2;
+public void CargarIngredientes()
+{
+Input = new Scanner(System.in);
+IDingredientes = new int [7];
+Ingredientes = new String[7];
+for (int i = 0 ; i <IDingredientes.length ; i++)
+{
+System.out.print("Ingrese el id del ingrediente:");
+IDingredientes[i] = Input.nextInt();
+System.out.print("Ingrese el nombre del ingrediente:");
+Ingredientes[i] = Input.next();
+}
+}
+public void SeleccionarIngredientes()
+{
+System.out.print("Ingrese el id del primer ingrediente:");
+int ingrediente1 = Input.nextInt();
+System.out.print("Ingrese el id del segundo ingrediente:");
+int ingrediente2 = Input.nextInt();
+for (int f = 0 ; f <IDingredientes.length ; f++ )
+{
+if (ingrediente1 ==IDingredientes[f] )
+{
+posicion1 = f;
+ID1 = IDingredientes[f];
+}
+}
+for (int k = 0 ; k <IDingredientes.length ; k++ )
+{
+if (ingrediente2 ==IDingredientes[k] )
+{
+posicion2= k;
+ID2 = IDingredientes[k];
+}
+}
+}
+public void PrepararReceta()
+{
+int receta = ID1 + ID2;
+System.out.print(receta+"!"+" Es una receta de "+Ingredientes[posicion1]+" con "+Ingredientes[posicion2]);
+}
+public static void main(String[] args)
+{
+Receta rec = new Receta();
+rec.CargarIngredientes();
+rec.SeleccionarIngredientes();
+rec.PrepararReceta();
+}
+}
